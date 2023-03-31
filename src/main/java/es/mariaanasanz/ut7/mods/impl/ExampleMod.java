@@ -22,9 +22,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod(DamMod.MOD_ID)
-public class ExampleMod extends DamMod implements IBlockBreakEvent, IServerStartEvent,
-        IItemPickupEvent, ILivingDamageEvent, IUseItemEvent, IFishedEvent,
-        IInteractEvent, IMovementEvent {
+public class ExampleMod extends DamMod implements IInteractEvent {
 
     public ExampleMod(){
         super();
@@ -32,72 +30,7 @@ public class ExampleMod extends DamMod implements IBlockBreakEvent, IServerStart
 
     @Override
     public String autor() {
-        return "Javier Jorge Soteras";
-    }
-
-    @Override
-    @SubscribeEvent
-    public void onBlockBreak(BlockEvent.BreakEvent event) {
-        BlockPos pos = event.getPos();
-        System.out.println("Bloque destruido en la posicion "+pos);
-    }
-
-    @Override
-    @SubscribeEvent
-    public void onServerStart(ServerStartingEvent event) {
-        LOGGER.info("Server starting");
-    }
-
-    @Override
-    @SubscribeEvent
-    public void onItemPickup(EntityItemPickupEvent event) {
-        LOGGER.info("Item recogido");
-        System.out.println("Item recogido");
-    }
-
-    @Override
-    @SubscribeEvent
-    public void onLivingDamage(LivingDamageEvent event) {
-        System.out.println("evento LivingDamageEvent invocado "+event.getEntity().getClass()+" provocado por "+event.getSource().getEntity());
-    }
-
-    @Override
-    @SubscribeEvent
-    public void onLivingDeath(LivingDeathEvent event) {
-        System.out.println("evento LivingDeathEvent invocado "+event.getEntity().getClass()+" provocado por "+event.getSource().getEntity());
-
-    }
-
-    @Override
-    @SubscribeEvent
-    public void onUseItem(LivingEntityUseItemEvent event) {
-        LOGGER.info("evento LivingEntityUseItemEvent invocado "+event.getEntity().getClass());
-    }
-
-
-    @Override
-    @SubscribeEvent
-    public void onPlayerFish(ItemFishedEvent event) {
-        System.out.println("¡Has pescado un pez!");
-    }
-
-    @Override
-    @SubscribeEvent
-    public void onPlayerWalk(MovementInputUpdateEvent event) {
-        if(event.getEntity() instanceof Player){
-            if(event.getInput().down){
-                System.out.println("down"+event.getInput().down);
-            }
-            if(event.getInput().up){
-                System.out.println("up"+event.getInput().up);
-            }
-            if(event.getInput().right){
-                System.out.println("right"+event.getInput().right);
-            }
-            if(event.getInput().left){
-                System.out.println("left"+event.getInput().left);
-            }
-        }
+        return "Ruben Lopez-Davalillo Ledesma";
     }
 
 
